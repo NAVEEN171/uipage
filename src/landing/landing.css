@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Permanent+Marker&display=swap');
+
+.container{
+   width:100%;
+   height:100dvh;
+   display:flex;
+}
+
+.container-left{
+    display:flex;
+    justify-content: center;
+    width:20%;
+    height:100%;
+}
+
+.img-wrapper{
+    height:32px;
+    width:32px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container-right{
+    width:calc(100% - 20%);
+    height:100%;
+}
+.menu{
+    display:flex;
+    flex-direction: column;
+    gap:4px;
+    cursor:pointer;
+}
+
+.heading{
+       color: rgba(23, 43, 77, 1);
+       font-size:26px;
+       font-weight: 800;
+    
+}
+
+.bar{
+    height:4px;
+    width:23px;
+    border-radius: 12px;
+    background-color: black;
+
+}
+
+.bar-wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:32px;
+    width:32px;
+}
+ 
+
+.menu-wrapper{
+    padding:10px 20px;
+    display:flex;
+    box-sizing: border-box;
+    gap:15px;
+    width:90%;
+    align-items: center;
+}
+hr{
+    height:1px;
+    background-color: rgba(164, 230, 255, 1);
+    border:none;
+    outline:none;
+    margin-top:20px;
+}
+.side-bar{
+    padding-top:58px;
+    display:flex;
+    flex-direction: column;
+    width:80%;
+    align-items: center;
+}
+
+.each-item{
+    height:40px;
+    display:flex;
+    align-items: center;
+    gap:15px;
+    cursor:pointer;
+    border-radius: 10px;
+    padding:10px 20px;
+    transition:all ease-in-out 0.3s;
+
+
+}
+
+.side-bottom-container{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    width:90%;
+    margin-top: 50px;
+}
+
+.side-name{
+    font-size:24px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+    
+}
+
+.active-side{
+    background-color: rgba(214, 244, 255, 1);
+    .side-name{
+    font-weight: 700 !important;
+    }
+    
+}
+
+.notify-container{
+    height:50px;
+    width:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7f8ff;
+    border-radius: 10px;
+
+}
+
+.user{
+    height:63px;
+    width:63px;
+    border-radius: 50%;
+    background-color: rgba(217, 217, 217, 1);
+}
+.inner-container{
+    width:95%;
+}
+
+.container-right{
+    display:flex;
+    justify-content: center;
+
+
+}
+
+.top-part{
+    padding-top:58px;
+    display:flex;
+    gap:15px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom:20px;
+
+}
+
+.bottom-container{
+    padding:20px;
+    width:100%;
+    height:calc(100% - 145px);
+    border:1px solid  rgba(164, 230, 255, 1);
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.notify-container img,.user{
+    cursor:pointer;
+    
+}
+
+.mentor-sessions,.learning-material{
+    display:flex;
+    gap:10px;
+}
+
+.bottom-left-wrapper{
+    padding:5px;
+    display:flex;
+    gap:30px;
+    
+}
+
+.bottom-right{
+    display:flex;
+    gap:10px;
+    padding:12px 16px;
+    height:fit-content;
+    align-items: center;
+    border:1px solid rgba(153, 228, 255, 1);
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "DM Sans", sans-serif;
+    cursor:pointer;
+}
+
+.bottom-top-cont{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.info{
+    width:24px;
+    height:24px;
+}
+.mentor-sessions{
+    font-size: 22px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+}
+
+.mentor-sessions,.learning-material{
+    padding:12px 20px;
+    align-items: center;
+
+}
+.learning-material, .mentor-sessions {
+    font-size: 22px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+    border-radius: 10px; /* Rounds corners */
+   
+    position: relative;
+    overflow: hidden; /* Ensures inner element respects border-radius */
+    cursor: pointer; /* Indicate clickable items */
+    transition:all ease-in-out 0.3s;
+}
+.learning-material.active, .mentor-sessions.active{
+background: linear-gradient(104.1deg, #05445E -162.17%, #D2E3FF 100%); /* Gradient border effect */
+box-shadow: 0px 3.67px 3.67px 0px rgba(41, 83, 155, 0.3); /* Shadow effect */
+}
+
+.active::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: white; /* Inner background color */
+    border-radius: 8px; /* Inner border radius, slightly smaller */
+    z-index: 0; /* Ensures it's behind the content */
+}
+
+.learning-material > *, .mentor-sessions > * {
+    position: relative;
+    z-index: 1; /* Ensures content is on top of the ::before element */
+}
+
+/* Active class for border and shadow */
+.active {
+    font-weight:700 !important;
+    
+}
+
+
+.learning-container{
+      margin-top:20px;
+      height:calc(100% - 103px);
+      display:flex;
+      justify-content: space-between;
+}
+
+.learning-chapters{
+    display:flex;
+    flex-direction: column;
+    height:100%;
+    width:30%;
+}
+.learning-content{
+    height:100%;
+    width:67%;
+    overflow-y: auto;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+
+
+
+}
+.desc-contents{
+    transition: display ease-in-out 0.4s;
+}
+.learning-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+.duration{
+    padding:0px 6px;
+}
+
+.time{
+    display:flex;
+    gap:10px;
+    font-size: 22px;
+    color:rgba(96, 138, 210, 1);
+    width:fit-content;
+    align-items: center;
+}
+.clock{
+    width:24px;
+    height:24px;
+}
+
+.chapter1,.chapter2,.chapter3,.chapter4,.chapter5{
+    font-size:24px;
+    font-weight: 400;
+    font-family:"DM sans",sans-serif;
+    border-radius: 8px;
+    
+}
+.active-chapter{
+    background-color:rgba(239, 245, 255, 1);;
+}
+.chapter-desc{
+    display:flex;
+    padding:25px 16px;
+    justify-content: space-between;
+    transition: all ease-in-out 0.3s;
+    border-radius: 8px;
+    cursor: pointer;
+
+        border-bottom: 0.5px solid transparent; /* Set the bottom border width and make it transparent */
+        border-image-source: linear-gradient(90deg, rgba(143, 223, 255, 0) 0%, #8FDFFF 49.99%, rgba(143, 223, 255, 0) 100%);
+        border-image-slice: 1; /* Ensure the entire gradient is applied */
+    
+
+
+}
+
+.contents-left .left,.contents-right img{
+     width:24px;
+     height:24px;
+
+}
+.contents-left,.contents-right{
+    display:flex;
+    gap:10px;
+    align-items: center;
+}
+.content-details{
+    padding:25px 15px;
+    display:flex;
+    justify-content: space-between;
+    border: none;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(90deg, rgba(23, 43, 77, 0) 12%, #172B4D 49.54%, rgba(5, 68, 94, 0) 90%);
+    border-image-slice: 1;
+
+}
+
+.content-name{
+    font-size:24px;
+    font-weight: 700;
+    font-family:"DM sans",sans-serif;
+}
+.content-clock-name{
+    font-size:24px;
+    font-weight: 400;
+    font-family:"DM sans",sans-serif;
+}
+
+.each-part{
+  
+
+}
+.play{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.each-partwrapper {
+    border:1px solid rgba(164, 230, 255, 1);
+    border-radius: 9px;
+    /* Ensure the gradient covers the entire border */
+}
+
+
+
+
+
+
+
+
+.each-part-container{
+    display:flex;
+    padding:10px 15px;
+    justify-content: space-between;
+}
+
+.progress-bar-container{
+    height:10px;
+    background-color:  rgba(239, 245, 255, 1);
+    border-radius:0px 0px 9px 9px;
+    position:relative;
+    overflow: hidden;
+}
+
+.progress-bar{
+    height:100%;
+    background-color: rgba(23, 43, 77, 0.85);
+}
+
+.right-part{
+   display:flex;
+   flex-direction: column;
+   gap:20px;
+   align-items: flex-end;
+}
+
+.right-up-part{
+    padding-top:10px;
+    display:flex;
+    gap:12px;
+    align-items: center;
+}
+
+.right-element1{
+    display:flex;
+    gap:8px;
+    align-items: center;
+}
+
+.ele1{
+    height:27px;
+    width:27px;
+}
+
+.timing{
+    font-size:24px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+    
+}
+.removeborder{
+    border-image-source: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 49.99%, rgba(255, 255, 255, 0) 100%);
+}
+
+.image-wrapper{
+    position:relative;
+    height:24px;
+    width:24px;
+}
+
+.arrow{
+    width:29px;
+    height:16px;
+    transform:rotate(0deg);
+    transition: transform ease-in-out 0.4s;
+    cursor:pointer;
+}
+
+.rotated{
+    transform:rotate(180deg);
+}
+
+.left-part-desc{
+    font-size:24px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+}
+
+.left-part{
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.main-heading{
+    font-size:24px;
+    font-weight: 700;
+    font-family: "DM Sans", sans-serif;
+}
+
+.completion{
+    font-size:20px;
+    font-weight: 400;
+    padding:4px 10px;
+    font-family: "DM Sans", sans-serif;
+    border: 1px solid rgba(153, 228, 255, 1);
+    width:fit-content;
+    border-radius: 8px;
+    background-color: #eff5ff;
+}
