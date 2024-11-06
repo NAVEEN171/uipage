@@ -53,13 +53,13 @@ const contents1=[
     {
         logo:CodeSvg,
         name:"Coding Exercise 1",
-        display:ClockSvg,
+        display:BClockSvg,
         duration:"10:00"
     },
     {
         logo:CopySvg,
         name:"Combined Resource 1",
-        display:ClockSvg,
+        display:BClockSvg,
         duration:"10:00"
     }
 ]
