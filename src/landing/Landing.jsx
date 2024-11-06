@@ -20,7 +20,106 @@ import { nanoid } from 'nanoid';
 
 
 
+import BClockSvg from "../assets/svgs/blackclk.svg"
+import CodeSvg from "../assets/svgs/code.svg"
+import VideoSvg from "../assets/svgs/video.svg"
+import QuestionSvg from "../assets/svgs/question.svg"
 import CopySvg from "../assets/svgs/copy.svg"
+import Play from "../assets/svgs/play.svg"
+
+
+
+
+
+const contents1=[
+    {
+        logo:VideoSvg,
+        name:"Video 1",
+        display:BClockSvg,
+        duration:"10:00"
+    },
+    {
+        logo:QuestionSvg,
+        name:"Article 1",
+        display:BClockSvg,
+        duration:"10:00"
+    },
+    {
+        logo:QuestionSvg,
+        name:"Quiz 1",
+        display:BClockSvg,
+        duration:"10:00"
+    },
+    {
+        logo:CodeSvg,
+        name:"Coding Exercise 1",
+        display:ClockSvg,
+        duration:"10:00"
+    },
+    {
+        logo:CopySvg,
+        name:"Combined Resource 1",
+        display:ClockSvg,
+        duration:"10:00"
+    }
+]
+
+
+const contents2=[
+    {
+        logo:VideoSvg,
+        name:"Video 2",
+        display:BClockSvg,
+        duration:"19:00"
+    },
+    {
+        logo:QuestionSvg,
+        name:"Article 2",
+        display:BClockSvg,
+        duration:"15:00"
+    },
+    {
+        logo:QuestionSvg,
+        name:"Quiz 2",
+        display:BClockSvg,
+        duration:"10:00"
+    },
+   
+]
+
+const contents3=[
+    {
+        logo:VideoSvg,
+        name:"Video 3",
+        display:BClockSvg,
+        duration:"10:00"
+    },
+    {
+        logo:QuestionSvg,
+        name:"Article 3",
+        display:BClockSvg,
+        duration:"10:00"
+    },
+    {
+        logo:QuestionSvg,
+        name:"Quiz 3",
+        display:BClockSvg,
+        duration:"17:00"
+    },
+    {
+        logo:CodeSvg,
+        name:"Coding Exercise 3",
+        display:BClockSvg,
+        duration:"15:00"
+    },
+    {
+        logo:CopySvg,
+        name:"Combined Resource 3",
+        display:BClockSvg,
+        duration:"12:00"
+    }
+]
+
 const chapters = [
     { name: "Chapter 1", time: "05:00:00", class: "chapter1" },
     { name: "Chapter 2", time: "03:00:00", class: "chapter2" },
@@ -29,38 +128,7 @@ const chapters = [
     { name: "Chapter 5", time: "03:34:00", class: "chapter5" }
 ]
 
-const contents1 = [
-    {
-        logo: Jobsvg,
-        name: "Video 1",
-        display: ClockSvg,
-        duration: "10:00"
-    },
-    {
-        logo: Jobsvg,
-        name: "Article 1",
-        display: ClockSvg,
-        duration: "10:00"
-    },
-    {
-        logo: Jobsvg,
-        name: "Quiz 1",
-        display: ClockSvg,
-        duration: "10:00"
-    },
-    {
-        logo: Jobsvg,
-        name: "Coding Exercise 1",
-        display: ClockSvg,
-        duration: "10:00"
-    },
-    {
-        logo: Jobsvg,
-        name: "Combined Resource 1",
-        display: ClockSvg,
-        duration: "10:00"
-    }
-]
+
 
 const parts = [
     {
@@ -76,6 +144,8 @@ const parts = [
         status: 0
     }
 ]
+const contents = [contents1, contents2, contents3];
+
 
 const Landing = () => {
     const [activediv, setactivediv] = useState("material");
@@ -174,16 +244,16 @@ const Landing = () => {
                         <div className='bottom-top-cont'>
                             <div className='bottom-left-wrapper'>
                                 <div onClick={() => { setactivediv('mentor') }} className={`mentor-sessions ${activediv === 'mentor' ? "active" : ""}`}>
-                                    <img className='info' src={MentorSvg}></img>
+                                    <img className='info' alt="mentor" src={MentorSvg}></img>
                                     <div className='content'>Mentor Sessions</div>
                                 </div>
                                 <div onClick={() => { setactivediv('material') }} className={`learning-material ${activediv === 'material' ? "active" : ""}`}>
-                                    <img className='info' src={Jobsvg}></img>
+                                    <img className='info' alt="info" src={Jobsvg}></img>
                                     <div className='content'>Learning Material</div>
                                 </div>
                             </div>
                             <div className='bottom-right'>
-                                <img className='info' src={InfoSvg}></img>
+                                <img className='info' alt="info" src={InfoSvg}></img>
                                 <div className='work-name'>How it works</div>
                             </div>
                         </div>
@@ -226,9 +296,9 @@ const Landing = () => {
                                                         </div>
                                                         <div className='right-element1'>
                                                             <img className='ele1' src={CopySvg} alt="clock" />
-                                                            <div className='timing'>5</div>
+                                                            <div className='timing'>{`${contents[idx].length}`}</div>
                                                         </div>
-                                                        <img className={`arrow ${idx+1===1?"":"rotated"}`} id={`arrow ${idx+1}`}   onClick={() => { arrowhandler(idx+1) }} alt="arrow" src={ArrowSvg}></img>
+                                                        <img className={`arrow `} id={`arrow ${idx+1}`}   onClick={() => { arrowhandler(idx+1) }} alt="arrow" src={ArrowSvg}></img>
                                                     </div>
                                                     <div className='completion'>
                                                         {part.status + "% completed"}
@@ -239,7 +309,7 @@ const Landing = () => {
                                                 <div style={{width:`${part.status}%`}} className='progress-bar'></div>
                                             </div>
                                         </div>
-                                        <Context num={idx+1} />
+                                        <Context contents={idx===0?contents1:idx===1?contents2:contents3} num={idx+1} />
                                         </div>
                                     </Fragment>
 
